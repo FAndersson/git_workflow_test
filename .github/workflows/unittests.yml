@@ -14,5 +14,4 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=$PYTHONPATH:.
-        pytest
-        
+        pytest -c ci/pytest.ini --doctest-modules -m "not slow" --durations=10
