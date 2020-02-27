@@ -15,8 +15,14 @@ jobs:
         pip install pytest
         export PYTHONPATH=$PYTHONPATH:.
         pytest -c ci/pytest.ini --doctest-modules -m "not slow" --durations=10
+
+  unittest_in_docker_container:
+    runs-on: ubuntu-latest
+    container:
+      image: fredrikandersson/debian-stable-python-image:stable-2019-12-24
+    
+    steps:
     - name: Tests in Docker container
-      uses: docker://fredrikandersson/debian-stable-python-image:stable-2019-12-24
       run: |
         export PYTHONPATH=$PYTHONPATH:.
         pytest -c ci/pytest.ini --doctest-modules -m "not slow" --durations=10
