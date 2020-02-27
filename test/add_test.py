@@ -11,7 +11,7 @@ def test_add():
 
 @pytest.mark.slow
 def test_add_large():
-    assert add(10, 20) = 30
+    assert add(10, 20) == 30
 
 
 if __name__ == "__main__":
