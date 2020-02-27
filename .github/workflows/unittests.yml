@@ -22,6 +22,7 @@ jobs:
       image: fredrikandersson/debian-stable-python-image:stable-2019-12-24
     
     steps:
+    - uses: actions/checkout@v2
     - name: Tests in Docker container
       run: |
         export PYTHONPATH=$PYTHONPATH:.
